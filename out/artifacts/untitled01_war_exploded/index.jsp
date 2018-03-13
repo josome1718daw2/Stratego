@@ -1,57 +1,101 @@
-<%--
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
---%>
-<%--
-    Document   : BeanEL
-    Created on : 25/01/2014, 09:18:12
-    Author     : sergi
---%>
-
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%--
-<%@ taglib prefix="ct" tagdir="/WEB-INF/tags"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ page import="login.ConnexioMesProves" %>
---%>
+<%@ page import="com.login.Registre_Func" %>
+
+
+
 
 <!DOCTYPE html>
 <html>
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <title></title>
-  <ct:taula numFiles="3" numColumnes="2" color="red" />
+
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js" integrity="sha384-feJI7QwhOS+hwpX2zkaeJQjeiwlhOP+SdQDqhgvvo1DsjtiSQByFdThsxO669S2D" crossorigin="anonymous"></script>
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <title>Login</title>
+
 </head>
 <body>
 
 
-<%--<jsp:useBean id="persona1" class="daw2.Persona" scope="session"/>
-<c:set target="${persona1}" property="nom" value="${param.nom}" />
-<h1>${persona1.nom}</h1>
+
+<form action="/login" method="post">
+  Login
+  User:     <input type="text" name="nom"> <br>
+  Password: <input type="text" name="password"><br>
+
+  <input type="submit" value="envia"/>
+</form>
+
+<h2>codigo david</h2>
+<form action="Login">
+  User:     <input type="text" name="uname"> <br>
+  Password: <input type="password" name="pass"><br>
+
+  <p><input type="submit" value="Envia" ></p>
+
+</form>
+<h1>Registre</h1>
+<form action="Registre" method="post">
+  User:     <input type="text" name="uname"> <br>
+  Password: <input type="password" name="pass"><br>
+
+  <p><input type="submit" value="Envia" ></p>
+
+</form>
 
 
-<%
-  ConnexioMesProves tc = new ConnexioMesProves();
-  out.print(tc.obtenirConnexio());
-  %>
 
+<div align="center">
+<form  action="login2" class="form-horizontal" method="post">
+    <fieldset>
 
+        <!-- Form Name -->
+        <legend>Iniciar Sessión</legend>
 
-<a href="BeanEL2.jsp">BeanEL2</a>
+        <!-- Text input-->
+        <div class="control-group">
+            <label class="control-label" for="username">Usuario</label>
+            <div class="controls">
+                <input id="username" name="username" type="text" placeholder="" class="input-large">
 
---%>
+            </div>
+        </div>
 
+        <!-- Password input-->
+        <div class="control-group">
+            <label class="control-label" for="password">Password</label>
+            <div class="controls">
+                <input id="password" name="password" type="password" placeholder="" class="input-large">
 
-<h1>Login</h1>
+            </div>
+        </div>
 
-  <form action="Login">
-    User:     <input type="text" name="uname"> <br>
-    Password: <input type="password" name="pass"><br>
+        <!-- Button -->
+        <div class="control-group">
+            <label class="control-label" for="login"></label>
+            <div class="controls">
+                <button id="login" name="login" class="btn btn-success">Iniciar Session</button>
+                <button id="register" name="register" class="btn btn-primary">Registrar</button>
 
-    <p><input type="submit" value="login" ></p>
+            </div>
+        </div>
 
-  </form>
+    </fieldset>
+</form>
+</div>
 
+<%--<%
+  Registre_Func tc = new Registre_Func();
+  out.print(tc.obtenirUsuari());
+  out.print(tc.obtenirPassword());
+%>--%>
 
+<%--<form action="Register">
+  <input type="submit" value="Register">
+</form>--%>
 
 </body>
 </html>

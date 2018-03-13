@@ -11,7 +11,7 @@ import java.io.IOException;
 /*
 @WebServlet(name = "Logout")
 */
-@WebServlet("/Logout")
+@WebServlet("/logout")
 
 public class Logout extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -23,6 +23,6 @@ public class Logout extends HttpServlet {
         HttpSession session = request.getSession();
         session.removeAttribute("username");
         session.invalidate();
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("/");
     }
 }
